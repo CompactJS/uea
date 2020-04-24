@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+    <title>Universal Element Accept</title>
+  </head>
+  <body>
+    <style>
+      main {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      section {
+        flex-direction: column;
+      }
+    </style>
+    <header>
+      <h1>Universal Element Accept</h1>
+      <p>Universal way to accept HTML Elements</p>
+      <a href="https://github.com/CompactJS/uea">Github</a>
+    </header>
+    <main>
+      <section>
+        <h2>Example HTML:</h2>
+        <code id="code_1"></code>
+        <br />
+        <h2>Function call:</h2>
+        accept(
+        <select id="input"> </select>
+        );
+      </section>
+      <h2>Returns:</h2>
+      <p>
+        <code id="code_2"></code>
+      </p>
+    </main>
+    <div style="display: none;">
+      <button class="class-select">Test1</button>
+      <button class="class-select">Test2</button>
+      <button id="test1">Test3</button>
+    </div>
+    <script type="module">
+      import { accept } from '../src/index.js';
+
+      const options = [
+        {
+          text: "document.getElementById('test1')",
+          fun: () => document.getElementById('test1'),
+        },
+        {
+          text: "'.class-select'",
+          fun: () => '.class-select',
+        },
+        {
+          text: "document.querySelectorAll('.class-select')",
+          fun: () => document.querySelectorAll('.class-select'),
+        },
+        {
+          text: "document.querySelector('#test1')",
+          fun: () => document.querySelector('#test1'),
+        },
+        {
+          text: 'button:first-child',
+          fun: () => 'button:first-child',
+        },
+        {
+          text: "'*'",
+          fun: () => '*',
+        },
+        {
+          text: "'document.getElementsByTagName('button')'",
+          fun: () => document.getElementsByTagName('button'),
+        },
+        {
+          text: "[document.body, document.getElementById('test1')]",
+          fun: () => [document.body, document.getElementById('test1')],
+        },
+      ];
+
+      document.getElementById(
+        'code_1'
+      ).innerText = `<button class="class-select">Test1</button>
+        <button class="class-select">Test2</button>
+        <button id="test1">Test3</button>`;
+      const output = document.getElementById('code_2');
+
+      const input = document.getElementById('input');
+
+      options.forEach((o, i) => {
+        const option = document.createElement('option');
+        option.value = i;
+        option.innerHTML = o.text;
+        input.appendChild(option);
+      });
+
+      const test = (fun) => {
+        const res = accept(fun());
+        output.innerHTML = `[ ${res} ]`;
+        console.log(res);
+      };
+
+      input.addEventListener('change', function onChange(e) {
+        test(options[e.target.value].fun);
+      });
+      test(options[0].fun);
+    </script>
+  </body>
+</html>
