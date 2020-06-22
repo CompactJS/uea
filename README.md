@@ -5,7 +5,7 @@
   <a href="https://www.npmjs.com/package/@compactjs/uea" target="_blank">
     <img alt="Version" src="https://img.shields.io/npm/v/@compactjs/uea.svg">
   </a>
-  <a href="https://github.com/CompactJS/uea/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/CompactJS/uea/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/CompactJS/uea" />
   </a>
 </p>
@@ -67,7 +67,7 @@ accept(document.getElementById('my-id'));
 ```
 
 Check out the [demo](https://compactjs.github.io/uea/)
-and the [examples file](https://github.com/CompactJS/uea/blob/master/example/index.html) for more examples.
+and the [examples file](https://github.com/CompactJS/uea/blob/main/example/index.html) for more examples.
 
 ### Doc:
 
@@ -116,7 +116,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Distributed under the [MIT](https://github.com/CompactJS/uea/blob/master/LICENSE) License.
+Distributed under the [MIT](https://github.com/CompactJS/uea/blob/main/LICENSE) License.
 
 ---
 
