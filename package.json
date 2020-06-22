@@ -1,6 +1,6 @@
 {
   "name": "@compactjs/uea",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Allows a range of different ways to select HTML Elements",
   "source": "src/index.js",
   "main": "dist/index.js",
