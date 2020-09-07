@@ -2,11 +2,11 @@
   "name": "@compactjs/uea",
   "version": "1.0.2",
   "description": "Allows a range of different ways to select HTML Elements",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
-  "types": "src/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "microbundle && npm run build:example",
     "build:example": "microbundle build -f es -o example/dist/index.js",
