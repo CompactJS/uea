@@ -14,7 +14,11 @@
         text-align: center;
       }
       section {
-        flex-direction: column;
+        display: block;
+      }
+      select {
+        display: inline;
+        font-size: 0.85em;
       }
     </style>
     <header>
@@ -29,7 +33,7 @@
         <br />
         <h2>Function call:</h2>
         accept(
-        <select id="input"> </select>
+        <select id="input"></select>
         );
       </section>
       <h2>Returns:</h2>
@@ -37,7 +41,7 @@
         <code id="code_2"></code>
       </p>
     </main>
-    <div style="display: none;">
+    <div style="display: none">
       <button class="class-select">Test1</button>
       <button class="class-select">Test2</button>
       <button id="test1">Test3</button>
