@@ -1,0 +1,1 @@
+function r(r){return"string"==typeof r?document.querySelector(r):r instanceof HTMLElement?r:null}var e=n;function n(r){return"string"==typeof r?Array.from(document.querySelectorAll(r)):Array.isArray(r)?r:"length"in r?Array.from(r).reduce(t,[]):[r]}function t(r,e){return e.nodeType===Node.ELEMENT_NODE&&r.push(e),r}export{e as accept,n as select,r as selectOne};
