@@ -19,7 +19,7 @@
   ·
 </p>
 
-You are writing a JavaScript library and need to accept one or more HTML elements? But you want to leave your users a broad choice, how to select them? Then this is for you.
+You are writing a JavaScript library and need to receive one or more HTML elements? But you want to leave your users a broad choice, on how to select them? Then this might be for you.
 
 ## Table of Contents
 
@@ -35,7 +35,7 @@ You are writing a JavaScript library and need to accept one or more HTML element
 
 Universal Element Accept (uea) allows you to accept a range of different inputs as HTML elements.
 
-It accepts, query selector strings, arrays, NodeLists and more (check out [usage](#usage)) and always returns an array with HTMLElements.
+It accepts query selector strings, arrays, NodeLists and more (check out [usage](#usage)) and always returns either an array with HTMLElements or a single element, depending on the function you use.
 
 ## Install
 
@@ -56,14 +56,20 @@ npm install @compactjs/uea
 ### As module:
 
 ```javascript
-import { accept } from '@compactjs/uea';
+import { select, selectOne } from '@compactjs/uea';
 ```
 
 ### Example:
 
 ```javascript
-accept('.my-classes');
-accept(document.getElementById('my-id'));
+// select multiple elements
+select('.my-classes');
+select(document.getElementById('my-id'));
+select(document.forms);
+
+// or only select a single element
+selectOne('.my-classes');
+selectOne(document.getElementById('my-id'));
 ```
 
 Check out the [demo](https://compactjs.github.io/uea/)
@@ -73,11 +79,18 @@ and the [examples file](https://github.com/CompactJS/uea/blob/main/example/index
 
 ```typescript
 /**
- * Allow a range of different ways to select HTML Elements
+ * Use a range of different ways to select HTML elements.
+ * Always returns an array of elements.
  */
-function accept(
+export function select(
   input: string | HTMLElement | HTMLElement[] | HTMLCollection | NodeList
 ): HTMLElement[];
+
+/**
+ * Use a range of different ways to select an HTMLElement.
+ * Always returns a single HTMLElement.
+ */
+export function selectOne(selector: string | HTMLElement): HTMLElement | null;
 ```
 
 ## Run tests

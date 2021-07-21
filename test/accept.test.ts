@@ -1,6 +1,6 @@
-import { accept } from '../src/index';
+import { accept, selectOne } from '../src/index';
 
-describe('accept', () => {
+describe('accepts multiple', () => {
   it('returns a HTMLElement list for strings', () => {
     document.body.innerHTML = `
 				<h1></h1>
@@ -38,5 +38,25 @@ describe('accept', () => {
     const acceptedElements = accept(collection);
     expect(acceptedElements).toHaveLength(1);
     expect(acceptedElements[0]).toBeInstanceOf(HTMLFormElement);
+  });
+});
+
+describe('accepts single', () => {
+  it('returns a HTMLElement for a string input', () => {
+    document.body.innerHTML = `
+				<h1></h1>
+				<div class="a-class"></div>
+				<span id="empty">empty</span>
+			`;
+    const element: HTMLElement = selectOne('h1');
+    expect(element).toBeInstanceOf(HTMLHeadingElement);
+
+    const element2: HTMLElement = selectOne('.a-class');
+    expect(element2).toBeInstanceOf(HTMLDivElement);
+  });
+  it('returns an HTMLElement with a HTMLElement as input', () => {
+    const element = document.createElement('div');
+    const acceptedElement = selectOne(element);
+    expect(acceptedElement).toBeInstanceOf(HTMLDivElement);
   });
 });
