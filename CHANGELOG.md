@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/CompactJS/uea/compare/v1.0.3...v1.1.0) (2021-07-21)
+
+
+### Features
+
+* add function to select a single element ([93516df](https://github.com/CompactJS/uea/commit/93516df1744444b2c252c7cd5c2e5629df48bd97))
+
 ## [1.0.3](https://github.com/CompactJS/uea/compare/v1.0.2...v1.0.3) (2020-09-07)
 
 
